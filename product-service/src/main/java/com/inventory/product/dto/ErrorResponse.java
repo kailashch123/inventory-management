@@ -1,4 +1,4 @@
-package com.inventory.product.exception;
+package com.inventory.product.dto;
 
 
 import lombok.Builder;

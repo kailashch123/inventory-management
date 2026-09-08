@@ -1,6 +1,7 @@
 package com.inventory.product.exception;
 
 
+import com.inventory.product.dto.ErrorResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
