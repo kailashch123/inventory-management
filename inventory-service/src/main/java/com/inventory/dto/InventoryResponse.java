@@ -19,7 +19,7 @@ public class InventoryResponse {
 
     private Integer quantity;
 
-    private Integer reservedQuanity;
+    private Integer reservedQuantity;
 
     private Integer availableQuantity;
 

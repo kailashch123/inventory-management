@@ -1,5 +1,6 @@
 package com.inventory.order.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.inventory.order.enums.OrderStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,8 +27,10 @@ public class OrderResponse {
 
     private List<OrderItemResponse> items;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdAt;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime updatedAt;
 
 }

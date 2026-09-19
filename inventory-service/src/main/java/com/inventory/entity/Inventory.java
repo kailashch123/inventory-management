@@ -26,8 +26,9 @@ public class Inventory {
     @Column(nullable = false)
     private Integer quantity;
 
+    @Builder.Default
     @Column(nullable = false)
-    private Integer reservedQuantity;
+    private Integer reservedQuantity = 0;
 
     @CreationTimestamp
     @Column(nullable = false, updatable = false)

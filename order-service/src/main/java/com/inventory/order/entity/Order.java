@@ -1,5 +1,6 @@
 package com.inventory.order.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.inventory.order.enums.OrderStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -35,10 +36,12 @@ public class Order {
     private BigDecimal totalAmount;
 
     @CreationTimestamp
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @Column(nullable = false)
     private LocalDateTime updatedAt;
 
