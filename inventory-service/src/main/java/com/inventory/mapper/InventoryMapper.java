@@ -20,7 +20,14 @@ public interface InventoryMapper {
 
     InventoryResponse toResponse(Inventory inventory);
 
-    List<InventoryResponse> toResponseList(List<Inventory> productList);
+    List<InventoryResponse> toResponseList(List<Inventory> inventoryList);
 
-    void updateEntity(InventoryRequest productRequest, @MappingTarget Inventory product);
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "reservedQuantity", ignore = true)
+    @Mapping(target = "createdAt", ignore = true)
+    @Mapping(target = "updatedAt", ignore = true)
+    void updateEntity(
+            InventoryRequest request,
+            @MappingTarget Inventory inventory
+    );
 }

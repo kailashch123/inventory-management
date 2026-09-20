@@ -7,6 +7,7 @@ import com.inventory.order.dto.OrderResponse;
 import com.inventory.order.entity.Order;
 import com.inventory.order.entity.OrderItem;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
 @Mapper(componentModel = "spring")
@@ -16,10 +17,12 @@ public interface OrderMapper {
 
     OrderItemResponse toOrderItemResponse(OrderItem orderItem);
 
+    @Mapping(source = "items", target = "orderItems")
     Order toOrder(OrderRequest request);
 
+    @Mapping(source = "status", target = "orderStatus")
+    @Mapping(source = "orderItems", target = "items")
     OrderResponse toOrderResponse(Order order);
 
-    void updateEnity(OrderRequest orderRequest, @MappingTarget Order order);
-
+    void updateEntity(OrderRequest orderRequest, @MappingTarget Order order);
 }

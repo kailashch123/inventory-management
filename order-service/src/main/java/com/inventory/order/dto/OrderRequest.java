@@ -19,6 +19,7 @@ public class OrderRequest {
     @NotNull
     private Long customerId;
 
+
     @NotEmpty
     private List<@Valid OrderItemRequest> items;
 }
